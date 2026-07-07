@@ -114,12 +114,6 @@ export AWS_DEFAULT_REGION="us-east-1"
 # Optional — for temporary session tokens (STS / SSO)
 export AWS_SESSION_TOKEN="..."
 ```
-
-> **Never hardcode credentials** in the script or commit them to version control.
-> The `.gitignore` in this repo already excludes `.env` files and credential files.
-
----
-
 ## How to Run
 
 ```bash
@@ -138,46 +132,3 @@ Example:
 
 ```bash
 python audit.py --region eu-west-1 --output-dir ./reports
-```
-
----
-
-## Output Files
-
-| File | Description |
-|------|-------------|
-| `report.csv` | Two-section CSV: costs then untagged resources |
-| `report.html` | Dark-themed, styled HTML dashboard |
-
-Open `report.html` in any browser for the visual view.
-
----
-
-## Sample Output Screenshot
-
-> **Note:** Replace this placeholder with an actual screenshot after running the tool.
-
-![Sample report.html output](docs/sample_report_screenshot.png)
-
-*(Run `python audit.py` and open `report.html` in your browser to generate the live report.)*
-
----
-
-## Running Tests / Linting (optional)
-
-```bash
-pip install pytest ruff
-ruff check audit.py
-```
-
----
-
-## Scheduling
-
-See [RUNBOOK.md](RUNBOOK.md) for instructions on scheduling via **cron** or **AWS Lambda + EventBridge**.
-
----
-
-## License
-
-MIT — see `LICENSE` for details.
